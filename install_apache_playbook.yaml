@@ -1,0 +1,9 @@
+---
+- hosts: apache
+  tasks:
+    - name: INSTALL APACHE2
+      apt: name=apache2 update_cache=yes state=latest
+
+  handlers:
+    - name: RESTART APACHE2
+      service: name=apache2 state=restarted

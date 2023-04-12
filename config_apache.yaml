@@ -1,0 +1,26 @@
+---
+- hosts: apache
+  tasks:
+    - name: CONFIG FROM APACHE
+      copy:
+        src: ./zitz.domain.conf
+        dest: /etc/apache2/sites-available
+        owner: zitz
+        group: zitz
+        mode: '0755'
+
+    - name: SET_INDEX.HTML FROM APACHE
+      copy:
+        src: ./index.html
+        dest: /var/www/zitz.domain/
+
+    - name: CONFIGURE APACHE
+      command: a2ensite zitz.domain.conf
+    - name: CONFIGURE APACHE 2
+      command: a2dissite 000-default.conf
+    - name:
+      command: systemctl reload apache2
+
+  handlers:
+    - name: RESTART APACHE2
+      service: name=apache2 state=restarted
