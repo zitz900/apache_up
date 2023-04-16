@@ -42,12 +42,14 @@
 
 ## db-[99:101]-node.example.com
 [all]
-192.168.1.74
-192.168.1.72
+192.168.1.74 ansible_ssh_user=root ansible_ssh_pass=1973
+192.168.1.72 ansible_ssh_user=root ansible_ssh_pass=1973
+192.168.1.78 ansible_ssh_user=root ansible_ssh_pass=1973
+192.168.1.75 ansible_ssh_user=root ansible_ssh_pass=1973
+192.168.1.77 ansible_ssh_user=root ansible_ssh_pass=1973
 
 [apache]
-# 192.168.1.72 ansible_ssh_user=root ansible_ssh_pass=1973
+192.168.1.72 ansible_ssh_user=root ansible_ssh_pass=1973
 192.168.1.74 ansible_ssh_user=root ansible_ssh_pass=1973
 
-[docker]
-192.168.1.74
+
