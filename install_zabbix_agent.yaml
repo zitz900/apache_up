@@ -1,0 +1,24 @@
+---
+- hosts: all
+  tasks:
+    - name: Install zabbix-agent
+      ansible.builtin.apt:
+          name: zabbix-agent
+          state: latest
+
+    - name: copy conf
+      ansible.builtin.copy:
+        src: ./zabbix_agentd.conf
+        dest: /etc/zabbix/zabbix_agentd.conf
+        owner: root
+        group: root
+        mode: '0777'
+
+    - name: restart zabbix
+      ansible.builtin.service:
+        name: zabbix-agent
+        state: restarted
+        enabled: yes
+
+
+        

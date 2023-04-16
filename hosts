@@ -52,4 +52,7 @@
 192.168.1.72 ansible_ssh_user=root ansible_ssh_pass=1973
 192.168.1.74 ansible_ssh_user=root ansible_ssh_pass=1973
 
+[test]
+192.168.1.77 ansible_ssh_user=root ansible_ssh_pass=1973
+
 
